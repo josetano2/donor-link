@@ -13,12 +13,21 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('blood_type_id');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->date('dob');
+            $table->string('gender');
             $table->rememberToken();
             $table->timestamps();
+
+            // foreign key
+            $table->foreign('blood_type_id')->references('id')->on('blood_types')->onUpdate('cascade')->onDelete('cascade');
+
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
