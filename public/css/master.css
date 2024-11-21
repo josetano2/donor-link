@@ -2,3 +2,49 @@
     width: 100vw;
     min-height: 100vh;
 }
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.navbar-container img {
+    object-fit: cover;
+    width: 2rem;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #863655;
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.middle-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.middle-container a {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.right-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.main-button {
+    border-radius: 3rem;
+    border: 0;
+}

@@ -2,7 +2,6 @@
 
 @section('content')
     <div>
-        blintern
     </div>
 
 @endsection

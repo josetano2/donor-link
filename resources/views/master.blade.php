@@ -10,25 +10,24 @@
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
 </head>
 <body class="parent-container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+    <div class="navbar-container">
+        <div class="left-container">
+            <img src="logo.png" alt="">
+            <a class="logo-text">Donor Link</a>
         </div>
-    </nav>
+        <div class="middle-container">
+            <a>Home</a>
+            <a>Events</a>
+            <a>History</a>
+            <a>About</a>
+        </div>
+        <div class="right-container">
+            <button type="button">Sign In</button>
+            <button type="button">Register</button>
+
+
+        </div>
+    </div>
     <div>
         @yield('content')
     </div>
