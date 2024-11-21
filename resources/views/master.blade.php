@@ -16,16 +16,15 @@
             <a class="logo-text">Donor Link</a>
         </div>
         <div class="middle-container">
-            <a>Home</a>
-            <a>Events</a>
-            <a>History</a>
-            <a>About</a>
+            <a class="nav-text">Home</a>
+            <a class="nav-text">Events</a>
+            <a class="nav-text">History</a>
+            <a class="nav-text">About</a>
         </div>
+        {{-- nanti ada validasi buat button/profile --}}
         <div class="right-container">
-            <button type="button">Sign In</button>
-            <button type="button">Register</button>
-
-
+            <button type="button" class="main-button primary-bg-color">Sign In</button>
+            <button type="button" class="main-button secondary-bg-color">Register</button>
         </div>
     </div>
     <div>

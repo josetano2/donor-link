@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .navbar-container img {
@@ -22,6 +22,9 @@
     text-decoration: none;
     color: #863655;
 }
+.logo-text:hover {
+    color: #863655;
+}
 
 .left-container {
     display: flex;
@@ -31,12 +34,20 @@
 
 .middle-container {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
-.middle-container a {
+.nav-text{
     font-weight: 700;
     font-size: 1.25rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-text:hover {
+    color: #863655;
+    transition-duration: 0.25s;
 }
 
 .right-container {
@@ -47,4 +58,28 @@
 .main-button {
     border-radius: 3rem;
     border: 0;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.primary-bg-color{
+    background-color: #863655;
+    color: #FFFFFF;
+}
+
+.primary-bg-color:hover{
+    background-color: #682b42;
+    transition-duration: 0.25s;
+}
+
+.secondary-bg-color{
+    background-color: transparent;
+    color: #863655;
+    border: 0.1rem solid #863655;
+}
+.secondary-bg-color:hover{
+    background-color: #d4d4d4;
+    transition-duration: 0.25s;
 }
