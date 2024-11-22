@@ -1,0 +1,21 @@
+.profile-header {
+    position: relative;
+    height: 250px;
+    background: url('https://commerceimg.blob.core.windows.net/images/wallpapersden.com_anime-girl-looking-at-sky_2000x1250.jpg') no-repeat center;
+    background-size: cover;
+}
+.profile-image {
+    position: absolute;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+.profile-info {
+    margin-top: 100px;
+}
+.info-label {
+    font-weight: bold;
+    color: #555;
+}

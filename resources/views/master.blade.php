@@ -36,7 +36,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="userDropdown">
                     <li>
-                        <a class="dropdown-item" href="">Profile</a>
+                        <a class="dropdown-item" href="{{route('profile')}}">Profile</a>
                     </li>
                     <li>
                         <form action="{{ route('logout.account') }}" method="POST">

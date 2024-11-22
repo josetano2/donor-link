@@ -28,5 +28,10 @@ class User extends Model implements AuthenticatableContract
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function bloodType()
+    {
+        return $this->belongsTo(BloodType::class);
+    }
 }
 
