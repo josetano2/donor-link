@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -14,6 +15,7 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/profile', function () {return view('profile');})->name('profile');
+Route::get('/admin', [AdminController::class, 'index']);
 
 // Post Request
 Route::post('/registerAccount', [RegisterController::class, 'store'])->name('register.store');
