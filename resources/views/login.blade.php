@@ -16,15 +16,32 @@
             <div class="title-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
-            <div class="form-container">
+            <form action="{{route('login.account')}}" method="POST" class="form-container">
+                @csrf
                 <div class="login-text">Login</div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+
+                    <input type="email" id="email" name="email" placeholder="Email"
+                    class="form-control @error('email') is-invalid @enderror"
+                    value="{{old('email')}}" required>
                     <label for="email">Email</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                    <label for="email">Password</label>
+
+                    <input type="password" id="password" name="password" placeholder="password"
+                    class="form-control @error('email') is-invalid @enderror"
+                    value="{{old('password')}}" required>
+                    @error('password')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                    <label for="password">Password</label>
+                    @error('email')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -32,9 +49,13 @@
                         Remember me
                     </label>
                 </div>
-                <button type="button" class="main-button primary-bg-color">Login</button>
+                
+                <button type="submit" class="main-button primary-bg-color">Login</button>
+                
+                <a href="/register">
                 <button type="button" class="main-button secondary-bg-color">Create new account</button>
-            </div>
+                </a>
+            </form>
 
 
         </div>

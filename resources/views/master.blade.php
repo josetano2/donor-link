@@ -24,8 +24,36 @@
         </div>
         {{-- nanti ada validasi buat button/profile --}}
         <div class="right-container">
+            @auth
+            <div class="dropdown">
+                <button class="main-button
+                primary-bg-color dropdown-toggle"
+                type="button"
+                id="userDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                {{ Auth::user()->name }}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                    <li>
+                        <a class="dropdown-item" href="">Profile</a>
+                    </li>
+                    <li>
+                        <form action="{{ route('logout.account') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            @else
             <a href="/login"><button type="button" class="main-button primary-bg-color">Login</button></a>
-            <button type="button" class="main-button secondary-bg-color">Register</button>
+            <a href="/register">
+            <button type="button" class="main-button secondary-bg-color">
+            Register
+            </button>
+            </a>
+            @endauth
         </div>
     </div>
     <div>

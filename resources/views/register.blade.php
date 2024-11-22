@@ -17,7 +17,9 @@
             <div class="title-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
-            <div class="form-container">
+            <form action="{{route('register.store')}}" method="POST" class="form-container">
+                @csrf
+        
                 <div class="login-text">Register</div>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
@@ -35,18 +37,20 @@
                     <input type="date" class="form-control" id="dob" name="dob" placeholder="mm/dd/yyyy">
                     <label for="dob">Date of Birth</label>
                 </div>
-                <select class="form-select">
+                <select class="form-select" name="blood_type">
                     @foreach ($blood_types as $bt)
                         <option value={{ $bt->id }}>{{ $bt->type }}</option>
                     @endforeach
                 </select>
-                <select class="form-select">
+                <select class="form-select" name="gender">
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                 </select>
 
-                <button type="button" class="main-button primary-bg-color">Sign In</button>
-            </div>
+                <button type="submit" class="main-button primary-bg-color">Sign Up</button>
+
+            </form>
+        
         </div>
         <img class="bg" src="https://www.homage.com.my/wp-content/uploads/sites/2/2022/06/Blood-Donor-Privileges-Malaysia.png" alt="">
         <div class="black-bg">
