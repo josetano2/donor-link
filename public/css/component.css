@@ -1,0 +1,28 @@
+.main-button {
+    border-radius: 0.5rem;
+    border: 0;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.primary-bg-color {
+    background-color: #863655;
+    color: #ffffff;
+}
+
+.primary-bg-color:hover {
+    background-color: #682b42;
+    transition-duration: 0.25s;
+}
+
+.secondary-bg-color {
+    background-color: transparent;
+    color: #863655;
+    border: 0.1rem solid #863655;
+}
+.secondary-bg-color:hover {
+    background-color: #d4d4d4;
+    transition-duration: 0.25s;
+}

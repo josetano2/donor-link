@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donor Link</title>
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/component.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.scss') }}">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
@@ -23,7 +24,7 @@
         </div>
         {{-- nanti ada validasi buat button/profile --}}
         <div class="right-container">
-            <button type="button" class="main-button primary-bg-color">Sign In</button>
+            <a href="/login"><button type="button" class="main-button primary-bg-color">Login</button></a>
             <button type="button" class="main-button secondary-bg-color">Register</button>
         </div>
     </div>
