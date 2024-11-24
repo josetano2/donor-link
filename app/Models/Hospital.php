@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Hospital extends Model
 {
     use HasFactory;
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class);
+    }
 }

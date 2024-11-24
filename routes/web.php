@@ -22,6 +22,7 @@ Route::post('/registerAccount', [RegisterController::class, 'store'])->name('reg
 Route::post('/login', [LoginController::class, 'login'])->name('login.account');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout.account');
 Route::post('/profile/update', [UserController::class, 'upload'])->name('profile.upload');
+Route::post('/admin', [AdminController::class, 'create'])->name('admin.create_event');
 
 // Put Request
 

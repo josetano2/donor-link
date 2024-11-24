@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/component.css') }}">
@@ -49,11 +49,11 @@
                         Remember me
                     </label>
                 </div>
-                
+
                 <button type="submit" class="main-button primary-bg-color">Login</button>
-                
+
                 <a href="/register">
-                <button type="button" class="main-button secondary-bg-color">Create new account</button>
+                    <button type="button" class="main-button secondary-bg-color">Create new account</button>
                 </a>
             </form>
 

@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Request extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
+
+    public function bloodType()
+    {
+        return $this->belongsTo(BloodType::class);
+    }
+
 }

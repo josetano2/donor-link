@@ -19,7 +19,7 @@
             </div>
             <form action="{{route('register.store')}}" method="POST" class="form-container">
                 @csrf
-        
+
                 <div class="login-text">Register</div>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
@@ -46,11 +46,9 @@
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                 </select>
-
                 <button type="submit" class="main-button primary-bg-color">Sign Up</button>
-
+                <button type="button" class="main-button secondary-bg-color">Have an account?</button>
             </form>
-        
         </div>
         <img class="bg" src="https://www.homage.com.my/wp-content/uploads/sites/2/2022/06/Blood-Donor-Privileges-Malaysia.png" alt="">
         <div class="black-bg">

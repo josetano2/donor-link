@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('hospital_id');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('date');
             $table->time('time_start');
+            $table->time('time_end');
             $table->integer('max_capacity');
             $table->string('location');
-            $table->text('decription');
+            $table->text('description');
             $table->string('contact_number');
             $table->string('contact_person');
             $table->timestamps();

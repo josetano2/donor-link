@@ -33,5 +33,18 @@ class User extends Model implements AuthenticatableContract
     {
         return $this->belongsTo(BloodType::class);
     }
+
+    public function request()
+    {
+        return $this->hasMany(Request::class);
+    }
+
+    public function userEvent()
+    {
+        return $this->hasMany(UserEvent::class);
+    }
+
+
+
 }
 
