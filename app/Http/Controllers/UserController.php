@@ -20,6 +20,11 @@ class UserController extends Controller
             $filename = time() . '.' . $image->getClientOriginalExtension();
     
             Storage::disk('azure')->putFileAs('folder', $image, $filename);
+            $profileUrl = rtrim(Storage::disk('azure')->url(''),'/').'/folder/'.$filename;
+
+            $user = Auth::user();
+            $user->profile_url = $profileUrl;
+            $user->save();
 
             return back()->with('success', 'Image uploaded successfully!');
         } else {

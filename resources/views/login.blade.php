@@ -16,7 +16,7 @@
             <div class="title-text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
-            <form action="{{route('login.account')}}" method="POST" class="form-container">
+            <form action="{{route('login')}}" method="POST" class="form-container">
                 @csrf
                 <div class="login-text">Login</div>
                 <div class="form-floating">

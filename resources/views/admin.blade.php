@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
 </head>
+
 <body>
     <div class="parent-container">
         <h1>Create Event</h1>
@@ -21,7 +23,8 @@
                 </ul>
             </div>
         @endif
-        <form method="POST" class="form-container" action="{{ route('admin.create_event') }}">
+        <form method="POST" enctype="multipart/form-data" class="form-container"
+            action="{{ route('admin.create_event') }}">
             @csrf
             <div class="form-floating">
                 <input type="text" class="form-control" id="location" name="location" placeholder="Location">
@@ -38,7 +41,8 @@
                 <label for="description">Description</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="max_capacity" name="max_capacity" placeholder="Max Capacity">
+                <input type="text" class="form-control" id="max_capacity" name="max_capacity"
+                    placeholder="Max Capacity">
                 <label for="max_capacity">Max Capacity</label>
             </div>
             <div class="time-container">
@@ -53,16 +57,22 @@
 
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Contact Number">
+                <input type="text" class="form-control" id="contact_number" name="contact_number"
+                    placeholder="Contact Number">
                 <label for="contact_number">Contact Number</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="Contact Person">
+                <input type="text" class="form-control" id="contact_person" name="contact_person"
+                    placeholder="Contact Person">
                 <label for="contact_person">Contact Person</label>
             </div>
             <div class="form-floating">
                 <input type="date" class="form-control" id="date" name="date" placeholder="mm/dd/yyyy">
                 <label for="date">Date Event</label>
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload Photo</label>
+                <input type="file" class="form-control" name="photo" id="photo">
             </div>
             <button type="submit" class="main-button primary-bg-color">Create Event</button>
         </form>
@@ -71,4 +81,5 @@
     </div>
 
 </body>
+
 </html>

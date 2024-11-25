@@ -33,6 +33,7 @@ class RegisterController extends Controller
             'dob' => $validated['dob'],
             'blood_type_id' => $validated['blood_type'],
             'gender' => $validated['gender'],
+            'profile_url' => 'https://commerceimg.blob.core.windows.net/images/Screenshot%202023-10-20%20221434.png',
         ]);
 
         return redirect()->route('home')->with('success', 'Registration successful!');

@@ -47,7 +47,9 @@
                         <option value="Female">Female</option>
                 </select>
                 <button type="submit" class="main-button primary-bg-color">Sign Up</button>
-                <button type="button" class="main-button secondary-bg-color">Have an account?</button>
+                <a href="/login">
+                    <button type="button" class="main-button secondary-bg-color">Have an account?</button>
+                </a>
             </form>
         </div>
         <img class="bg" src="https://www.homage.com.my/wp-content/uploads/sites/2/2022/06/Blood-Donor-Privileges-Malaysia.png" alt="">

@@ -19,6 +19,7 @@ class Event extends Model
         'contact_number',
         'contact_person',
         'date',
+        'image_url',
     ];
 
     public function userEvents()

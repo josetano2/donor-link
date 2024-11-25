@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Hospital;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     public function index()
@@ -26,8 +26,14 @@ class AdminController extends Controller
             'contact_number' => 'required|string|max:20',
             'contact_person' => 'required|string|max:255',
             'date' => 'required|date|after_or_equal:today',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+        if ($request->hasFile('photo')) {
+            $image = $request->file('photo');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            Storage::disk('azure')->putFileAs('events', $image, $filename);
+        }
+        $imageUrl = rtrim(Storage::disk('azure')->url(''), '/') . '/events/' . $filename;
         Event::create([
             'location' => $request->location,
             'hospital_id' => $request->hospital_id,
@@ -38,6 +44,7 @@ class AdminController extends Controller
             'contact_number' => $request->contact_number,
             'contact_person' => $request->contact_person,
             'date' => $request->date,
+            'image_url' => $imageUrl,
         ]);
         return redirect()->route('home')->with(['success' => 'Event has been created!']);
     }

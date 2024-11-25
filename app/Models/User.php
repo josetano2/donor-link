@@ -18,6 +18,7 @@ class User extends Model implements AuthenticatableContract
         'dob',
         'blood_type_id',
         'gender',
+        'profile_url',
     ];
 
     protected $hidden = [

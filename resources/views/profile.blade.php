@@ -16,7 +16,7 @@
         @csrf
         <div class="form-group">
             <label for="photo">
-                <img src="https://th.bing.com/th/id/OIP.SR5QEVzplmauXXt70yQsDwHaHa?rs=1&pid=ImgDetMain" 
+                <img src="{{ Auth::user()->profile_url }}" 
                      class="profile-image mb-2" 
                      alt="User Image" 
                      width="150" 
@@ -25,7 +25,6 @@
             </label>
             <input type="file" name="photo" id="photo" class="form-control-file d-none" onchange="this.form.submit()">
         </div>
-        <small class="text-muted">Click on the photo to upload a new one</small>
     </form>
 </div>
 
