@@ -3,6 +3,7 @@
     height: 250px;
     background: url('https://commerceimg.blob.core.windows.net/images/wallpapersden.com_anime-girl-looking-at-sky_2000x1250.jpg') no-repeat center;
     background-size: cover;
+    border-radius: 15px 15px 15px 15px;
 }
 .profile-image {
     position: absolute;

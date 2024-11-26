@@ -18,6 +18,8 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/profile', function () {return view('profile');})
 ->name('profile')->middleware('auth');
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/events', [EventController::class, 'index'])->name('events');
+Route::get('/event/{id}', [EventController::class, 'getEvent'])->name('event');
 
 // Post Request
 Route::post('/registerAccount', [RegisterController::class, 'store'])->name('register.store');

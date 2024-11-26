@@ -1,0 +1,62 @@
+
+
+.hero-section {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero-section .container {
+    position: relative;
+}
+
+.hero-section h1,
+.hero-section p {
+    color: #fff;
+}
+
+.event-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text {
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #ff5722;
+    border-color: #ff5722;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19;
+    border-color: #e64a19;
+}
+
