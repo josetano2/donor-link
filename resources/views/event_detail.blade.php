@@ -1,12 +1,25 @@
 @extends('master')
 
 @section('content')
-<div class="container my-5">
+<form class="container my-5" action="{{route('event.register')}}" method="POST">
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @csrf
+    <input type="hidden" name="event_id" value="{{ $event->id }}">
     <div class="row">
         <div class="col-md-6">
             <img src="{{ $event->image_url }}" class="img-fluid rounded" alt="{{ $event->events }}">
         </div>
-        
+
         <div class="col-md-6">
             <h1>{{ $event->events }}</h1>
             <p class="text-muted">
@@ -19,8 +32,8 @@
             <h4>Contact Information</h4>
             <p><strong>Contact Person:</strong> {{ $event->contact_person }}</p>
             <p><strong>Contact Number:</strong> {{ $event->contact_number }}</p>
-            <a href="#" class="btn btn-success mt-3">Register Now</a>
+            <button class="btn btn-primary" type="submit">Register</button>
         </div>
     </div>
-</div>
-@endsection
+    </>
+    @endsection

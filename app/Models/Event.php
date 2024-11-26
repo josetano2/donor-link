@@ -31,4 +31,10 @@ class Event extends Model
     {
         return $this->belongsTo(Hospital::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_events')
+            ->withTimestamps();
+    }
 }

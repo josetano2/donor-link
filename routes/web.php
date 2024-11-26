@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserEventController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -27,7 +28,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout.account');
 Route::post('/profile/update', [UserController::class, 'upload'])->name('profile.upload');
 Route::post('/admin', [AdminController::class, 'create'])->name('admin.create_event');
-
+Route::post('/event/register', [UserEventController::class, 'register'])->name('event.register');
 // Put Request
 
 

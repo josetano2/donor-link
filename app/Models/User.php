@@ -39,7 +39,11 @@ class User extends Model implements AuthenticatableContract
     {
         return $this->hasMany(Request::class);
     }
-
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'user_events')
+            ->withTimestamps();
+    }
     public function userEvent()
     {
         return $this->hasMany(UserEvent::class);
