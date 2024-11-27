@@ -35,7 +35,6 @@
                     <option value={{ $h->id }}>{{ $h->name }}</option>
                 @endforeach
             </select>
-
             <div class="form-floating">
                 <input type="text" class="form-control" id="description" name="description" placeholder="Description">
                 <label for="description">Description</label>

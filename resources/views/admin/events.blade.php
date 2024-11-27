@@ -49,23 +49,21 @@
                     <td>{{ $event->location }}</td>
                     <td>{{ $event->max_capacity }}</td>
                     <td>{{ $event->hospital_id }}</td>
-                    <td>
-
-                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#editEventModal{{ $event->id }}">
-                            Edit
-                        </button>
-
-
-                        <form action="{{route('admin.delete_event', $event->id)}}" class="d-inline" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="id" value="{{ $event->id }}">
-                            <button type="submit" class="btn btn-danger btn-sm"
-                                onclick="return confirm('Are you sure you want to delete this event?');">
-                                Delete
+                    <td class="p-3">
+                        <div class="d-flex justify-content-center align-items-center gap-2 w-100">
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editEventModal{{ $event->id }}">
+                                Edit
                             </button>
-                        </form>
+                            <form action="{{route('admin.delete_event', $event->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="id" value="{{ $event->id }}">
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                                      onclick="return confirm('Are you sure you want to delete this event?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
 
