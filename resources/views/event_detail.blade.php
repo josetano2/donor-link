@@ -32,7 +32,11 @@
             <h4>Contact Information</h4>
             <p><strong>Contact Person:</strong> {{ $event->contact_person }}</p>
             <p><strong>Contact Number:</strong> {{ $event->contact_number }}</p>
-            <button class="btn btn-primary" type="submit">Register</button>
+            @if($isRegistered)
+                <button class="main-button secondary-bg-color" type="submit">You already registered!</button>
+            @else
+                <button class="main-button primary-bg-color" type="submit">Register</button>
+            @endif
         </div>
     </div>
     </>

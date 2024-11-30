@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserEventController;
 use App\Http\Middleware\IsAdmin;
+use App\Models\UserEvent;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,7 +24,7 @@ Route::get('/profile', function () {
     ->name('profile')->middleware('auth');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/events', [EventController::class, 'index'])->name('events');
-Route::get('/event/{id}', [EventController::class, 'getEvent'])->name('event');
+Route::get('/event/{id}', [UserEventController::class, 'index'])->name('event');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')
     ->middleware(IsAdmin::class);
 
