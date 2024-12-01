@@ -27,6 +27,7 @@ Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::get('/event/{id}', [UserEventController::class, 'index'])->name('event');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')
     ->middleware(IsAdmin::class);
+Route::get('/tracker', [UserEventController::class, 'tracker'])->name('tracker');
 
 // Post Request
 Route::post('/registerAccount', [RegisterController::class, 'store'])->name('register.store');

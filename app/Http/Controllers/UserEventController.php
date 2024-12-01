@@ -16,6 +16,16 @@ class UserEventController extends Controller
         return $isExist;
     }
 
+    public function tracker()
+    {
+        $userId = Auth::id();
+        $registeredEvents = UserEvent::where('user_id', $userId)
+            ->with('events')
+            ->get();
+
+        return view('tracker', compact('registeredEvents'));
+    }
+
     public function index($id)
     {
         $event = Event::find($id);

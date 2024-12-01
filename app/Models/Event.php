@@ -24,7 +24,7 @@ class Event extends Model
 
     public function userEvents()
     {
-        return $this->hasMany(UserEvent::class);
+        return $this->hasMany(UserEvent::class, 'event_id');
     }
 
     public function hospital()
@@ -32,9 +32,9 @@ class Event extends Model
         return $this->belongsTo(Hospital::class);
     }
 
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'user_events')
-            ->withTimestamps();
-    }
+    // public function users()
+    // {
+    //     return $this->belongsToMany(User::class, 'user_events')
+    //         ->withTimestamps();
+    // }
 }

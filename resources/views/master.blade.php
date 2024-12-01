@@ -21,8 +21,7 @@
         <div class="middle-container">
             <a class="nav-text" href="{{route('home')}}">Home</a>
             <a class="nav-text" href="{{route('events')}}">Events</a>
-            <a class="nav-text">History</a>
-            <a class="nav-text">About</a>
+            <a class="nav-text" href="{{route('tracker')}}">Tracker</a>
         </div>
         {{-- nanti ada validasi buat button/profile --}}
         <div class="right-container">
