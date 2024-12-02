@@ -19,9 +19,10 @@
             <a class="logo-text">Donor Link</a>
         </div>
         <div class="middle-container">
-            <a class="nav-text" href="{{route('home')}}">Home</a>
-            <a class="nav-text" href="{{route('events')}}">Events</a>
-            <a class="nav-text" href="{{route('tracker')}}">Tracker</a>
+            <a class="nav-text {{ Request::is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
+            <a class="nav-text {{ Request::is('events*') ? 'active' : '' }}" href="{{ route('events') }}">Events</a>
+            <a class="nav-text {{ Request::is('tracker*') ? 'active' : '' }}" href="{{ route('tracker') }}">Tracker</a>
+            <a class="nav-text {{ Request::is('request*') ? 'active' : '' }}" href="{{ route('request') }}">Request</a>
         </div>
         {{-- nanti ada validasi buat button/profile --}}
         <div class="right-container">
@@ -54,7 +55,7 @@
             @endauth
         </div>
     </div>
-    <div>
+    <div class="section-container">
         @yield('content')
     </div>
 </body>

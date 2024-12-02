@@ -21,15 +21,14 @@
         </div>
 
         <div class="col-md-6">
-            <h1>{{ $event->events }}</h1>
+            <h4><strong>Location:</strong> {{ $event->location }}</h4>
             <p class="text-muted">
                 <i class="far fa-calendar-alt"></i> {{ $event->date }} &nbsp;
                 <i class="far fa-clock"></i> {{ $event->time_start }} - {{ $event->time_end }}
             </p>
-            <p><strong>Location:</strong> {{ $event->location }}</p>
             <p>{{ $event->description }}</p>
-            <p><strong>Maximum Capacity:</strong> {{ $event->max_capacity }}</p>
-            <h4>Contact Information</h4>
+            <p><strong>Total Participants:</strong> {{ $totalParticipants }} / {{ $event->max_capacity }}</p>
+            <h4><strong>Contact Information</strong></h4>
             <p><strong>Contact Person:</strong> {{ $event->contact_person }}</p>
             <p><strong>Contact Number:</strong> {{ $event->contact_number }}</p>
             @if($isRegistered)

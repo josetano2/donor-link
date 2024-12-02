@@ -39,8 +39,11 @@ class UserEventController extends Controller
     {
         $event = Event::find($id);
         $isRegistered = $this->isRegistered(Auth::id(), $id);
+        $totalParticipants = DB::table('user_events')
+            ->where('event_id', $id)
+            ->count();
 
-        return view('event_detail', compact('event', 'isRegistered'));
+        return view('event_detail', compact('event', 'isRegistered', 'totalParticipants'));
     }
 
 

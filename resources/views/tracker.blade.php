@@ -2,8 +2,6 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/tracker.css') }}">
-
-    <div class="tracker-container">
         <h2>Upcoming Events</h2>
         <div class="event-container">
             @forelse ($upcomingEvents as $re)
@@ -48,7 +46,4 @@
                 </h4>
             @endforelse
         </div>
-
-    </div>
-
 @endsection
