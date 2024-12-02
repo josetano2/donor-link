@@ -19,11 +19,20 @@ class UserEventController extends Controller
     public function tracker()
     {
         $userId = Auth::id();
-        $registeredEvents = UserEvent::where('user_id', $userId)
+        $upcomingEvents = UserEvent::where('user_id', $userId)
+            ->whereHas('events', function ($query) {
+                $query->where('date', '>=', date('Y-m-d'));
+            })
+            ->with('events')
+            ->get();
+        $previousEvents = UserEvent::where('user_id', $userId)
+            ->whereHas('events', function ($query) {
+                $query->where('date', '<', date('Y-m-d'));
+            })
             ->with('events')
             ->get();
 
-        return view('tracker', compact('registeredEvents'));
+        return view('tracker', compact('upcomingEvents', 'previousEvents'));
     }
 
     public function index($id)
