@@ -38,3 +38,12 @@ hr {
 .active {
     color: #863655;
 }
+
+.column-span {
+    width: 40%;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+}

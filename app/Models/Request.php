@@ -9,6 +9,16 @@ class Request extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'hospital_id',
+        'blood_type_id',
+        'reason',
+        'status',
+        'request_date',
+    ];
+
+
     public function user()
     {
         return $this->belongsTo(User::class);

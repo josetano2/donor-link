@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/component.css') }}">
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
-
 </head>
 <body>
     <div class="parent-container">

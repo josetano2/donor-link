@@ -9,9 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserEventController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use App\Http\Middleware\IsAdmin;
-use App\Models\UserEvent;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     return view('home');
@@ -25,8 +23,8 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/events', [EventController::class, 'index'])->name('events');
 
 // Post Request
-Route::post('/registerAccount', [RegisterController::class, 'store'])->name('register.store');
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/registeraccount', [registercontroller::class, 'store'])->name('register.store');
+route::post('/login', [logincontroller::class, 'login'])->name('login');
 Route::post('/admin', [AdminController::class, 'create'])->name('admin.create_event');
 Route::post('/event/register', [UserEventController::class, 'register'])->name('event.register');
 
@@ -45,4 +43,5 @@ Route::middleware([EnsureIsLoggedIn::class])->group(function () {
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout.account');
     Route::post('/profile/update', [UserController::class, 'upload'])->name('profile.upload');
+    Route::post('/request', [RequestController::class, 'create'])->name('request.create');
 });
