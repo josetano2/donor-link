@@ -2,7 +2,7 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/tracker.css') }}">
-        <h2>Upcoming Events</h2>
+        <h2>@lang('tracker.upcoming')</h2>
         <div class="event-container">
             @forelse ($upcomingEvents as $re)
                 <div class="main-container">
@@ -20,11 +20,11 @@
                 </div>
             @empty
                 <h4>
-                    No Upcoming Events
+                    @lang('tracker.empty')
                 </h4>
             @endforelse
         </div>
-        <h2>Previous Events</h2>
+        <h2>@lang('tracker.previous')</h2>
         <div class="event-container">
             @forelse ($previousEvents as $re)
                 <div class="main-container">
@@ -42,7 +42,7 @@
                 </div>
             @empty
                 <h4>
-                    No Previous Events
+                    @lang('tracker.empty_previous')
                 </h4>
             @endforelse
         </div>

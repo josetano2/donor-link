@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RequestController;
@@ -9,32 +10,45 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserEventController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\LanguageMiddleware;
 use Illuminate\Support\Facades\Route;
 
+// Home Route
 Route::get('/', function () {
     return view('home');
-})->name('home');
+})->name('home')->middleware(LanguageMiddleware::class);
 
-// Get Request
-Route::get('/admin', [AdminController::class, 'index'])->name('admin')
-    ->middleware(IsAdmin::class);
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
-Route::get('/events', [EventController::class, 'index'])->name('events');
+// Language Switcher Route
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ja'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
 
-// Post Request
-Route::post('/registeraccount', [registercontroller::class, 'store'])->name('register.store');
-route::post('/login', [logincontroller::class, 'login'])->name('login');
-Route::post('/admin', [AdminController::class, 'create'])->name('admin.create_event');
+// Authentication Routes
+Route::middleware(LanguageMiddleware::class)->group(function () {
+    Route::get('/login', [LoginController::class, 'index']);
+    Route::get('/register', [RegisterController::class, 'index']);
+    Route::post('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/registeraccount', [RegisterController::class, 'store'])->name('register.store');
+});
 
-// Put Request
-Route::put('/admin/{id}', [AdminController::class, 'edit'])->name('admin.edit_event');
+// Admin Routes
+Route::middleware([IsAdmin::class, LanguageMiddleware::class])->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::post('/', [AdminController::class, 'create'])->name('admin.create_event');
+    Route::put('/{id}', [AdminController::class, 'edit'])->name('admin.edit_event');
+    Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete_event');
+});
 
-// Delete Request
-Route::delete('/adminDelete/{id}', [AdminController::class, 'delete'])->name('admin.delete_event');
+// Event Routes
+Route::middleware(LanguageMiddleware::class)->group(function () {
+    Route::get('/events', [EventController::class, 'index'])->name('events');
+});
 
-// Auth Request
-Route::middleware([EnsureIsLoggedIn::class])->group(function () {
+// Authenticated User Routes
+Route::middleware([EnsureIsLoggedIn::class, LanguageMiddleware::class])->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('profile');
     Route::get('/event/{id}', [UserEventController::class, 'index'])->name('event');
     Route::get('/tracker', [UserEventController::class, 'tracker'])->name('tracker');

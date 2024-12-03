@@ -41,7 +41,7 @@
     </section>
 
     <div class="container my-5">
-        <h2 class="mb-4">Upcoming Events</h2>
+        <h2 class="mb-4">@lang('events.upcoming')</h2>
         <div class="row">
 
             @foreach ($events as $event)
