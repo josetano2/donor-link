@@ -10,7 +10,8 @@ class EventController extends Controller
     //
     public function index()
     {
-        $events = Event::all();
+        $events = Event::where('date', '>=', date('Y-m-d'))->get();
+
         return view('events', compact('events'));
     }
 

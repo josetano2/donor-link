@@ -26,7 +26,6 @@ Route::get('/events', [EventController::class, 'index'])->name('events');
 Route::post('/registeraccount', [registercontroller::class, 'store'])->name('register.store');
 route::post('/login', [logincontroller::class, 'login'])->name('login');
 Route::post('/admin', [AdminController::class, 'create'])->name('admin.create_event');
-Route::post('/event/register', [UserEventController::class, 'register'])->name('event.register');
 
 // Put Request
 Route::put('/admin/{id}', [AdminController::class, 'edit'])->name('admin.edit_event');
@@ -43,5 +42,7 @@ Route::middleware([EnsureIsLoggedIn::class])->group(function () {
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout.account');
     Route::post('/profile/update', [UserController::class, 'upload'])->name('profile.upload');
+    Route::post('/event/register', [UserEventController::class, 'register'])->name('event.register');
     Route::post('/request', [RequestController::class, 'create'])->name('request.create');
+    Route::post('/event/unregister', [UserEventController::class, 'unregister'])->name('event.unregister');
 });

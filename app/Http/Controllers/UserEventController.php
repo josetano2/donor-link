@@ -71,4 +71,27 @@ class UserEventController extends Controller
 
         return redirect('/events')->with('success', 'You have successfully registered for the event!');
     }
+
+    public function unregister(Request $req)
+    {
+        $req->validate([
+            'event_id' => 'required|integer|exists:events,id',
+        ]);
+
+        $userId = Auth::id();
+        $eventId = $req->input('event_id');
+
+        $data = DB::table('user_events')
+            ->where('user_id', $userId)
+            ->where('event_id', $eventId)
+            ->delete();
+
+        if($data){
+            return redirect('/events')->with('success', 'You have successfully unregistered for the event!');
+        }
+        else{
+            return redirect('/events')->with('error', 'Failed to unregister');
+        }
+
+    }
 }
