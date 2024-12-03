@@ -25,3 +25,20 @@
 .page-item.disabled .page-link {
     display: none;
 }
+
+.header-red {
+    background-color: #863655;
+    color: #ffffff;
+}
+
+.bg-pending {
+    background-color: #f8ff7d;
+}
+
+.bg-accepted {
+    background-color: #93ff7d;
+}
+
+.bg-rejected {
+    background-color: #ff7d81;
+}

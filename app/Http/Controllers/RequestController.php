@@ -17,7 +17,13 @@ class RequestController extends Controller
         $userId = Auth::id();
 
         $donorRequests = RequestModel::where('user_id', '=', $userId)->paginate(3);
-        return view('request', compact('hospitals', 'bloodTypes', 'donorRequests'));
+
+        $statusEnum = [
+            'Pending' => 'bg-pending',
+            'Accepted' => 'bg-accepted',
+            'Rejected' => 'bg-rejected',
+        ];
+        return view('request', compact('hospitals', 'bloodTypes', 'donorRequests', 'statusEnum'));
     }
 
     public function create(Request $request)

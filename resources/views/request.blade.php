@@ -12,7 +12,7 @@
     @else
 
         <table class="table">
-            <thead class="table-dark">
+            <thead class="header-red">
                 <tr>
                     <th scope="col">No.</th>
                     <th scope="col">Hospital</th>
@@ -24,7 +24,7 @@
             </thead>
             <tbody>
                 @foreach ($donorRequests as $dr)
-                    <tr>
+                    <tr class="{{ $statusEnum[$dr->status] }}">
                         <td>{{ $dr->id }}</td>
                         <td>{{ $dr->hospital->name }}</td>
                         <td>{{ $dr->bloodType->type }}</td>
