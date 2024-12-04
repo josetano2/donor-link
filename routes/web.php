@@ -24,7 +24,7 @@ Route::get('/events', [EventController::class, 'index'])->name('events');
 
 // Post Request
 Route::post('/registeraccount', [registercontroller::class, 'store'])->name('register.store');
-route::post('/login', [logincontroller::class, 'login'])->name('login');
+Route::post('/login', [logincontroller::class, 'login'])->name('login');
 Route::post('/admin', [AdminController::class, 'create'])->name('admin.create_event');
 
 // Put Request

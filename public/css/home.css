@@ -1,0 +1,141 @@
+.jumbotron-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    border-radius: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.jumbotron-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    position: absolute;
+    z-index: 9;
+}
+
+strong {
+    color: #b54872;
+}
+
+.black-bg {
+    position: absolute;
+    background-color: black;
+    opacity: 0.65;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.black-bg:hover {
+    opacity: 0.5;
+}
+
+.left-gradient {
+    position: absolute;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(175, 66, 91, 0.6601234243697479) 0%,
+        rgba(254, 116, 169, 0.12510941876750703) 33%,
+        rgba(134, 54, 85, 0) 100%
+    );
+    border-radius: 1rem;
+    width: 80%;
+    height: 100%;
+    z-index: 11;
+}
+
+.top-left-div {
+    position: relative;
+    background-color: white;
+    border-radius: 0.5rem 0 0.5rem 0;
+    width: fit-content;
+    font-size: 4rem;
+    z-index: 11;
+    color: black;
+    box-sizing: border-box;
+    font-weight: bold;
+    z-index: 11;
+    padding: 1rem;
+}
+
+.top-left-div:before {
+    content: "";
+    position: absolute;
+
+    background-color: transparent;
+    bottom: -3rem;
+    left: 0;
+    height: 3rem;
+    width: 2.5rem;
+    border-top-left-radius: 0.5rem;
+    box-shadow: 0 -25px 0 0 white; /* This is where the magic happens! */
+}
+
+.top-left-div:after {
+    content: "";
+    position: absolute;
+
+    background-color: transparent;
+    top: 0;
+    right: -3rem;
+    height: 2.5rem;
+    width: 3rem;
+    border-top-left-radius: 0.5rem;
+    box-shadow: -25px 0 0 0 white;
+}
+
+.jumbotron-button {
+    position: absolute;
+    border-radius: 0.5rem;
+    border: 0;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: #863655;
+    z-index: 11;
+    bottom: 1rem;
+    right: 1rem;
+    color: white;
+}
+
+.sub-jumbotron-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.small-jumbotron-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    border-radius: 1rem;
+}
+
+.sub-jumbotron-text {
+    color: white;
+    position: absolute;
+    font-size: 2rem;
+    z-index: 11;
+    font-weight: bold;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .top-left-div {
+        font-size: 2rem;
+        max-width: 50%;
+    }
+}
