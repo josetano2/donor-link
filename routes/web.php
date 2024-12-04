@@ -35,7 +35,7 @@ Route::middleware(LanguageMiddleware::class)->group(function () {
 });
 
 // Admin Routes
-Route::middleware([IsAdmin::class, LanguageMiddleware::class])->prefix('admin')->group(function () {
+Route::middleware([EnsureIsLoggedIn::class, IsAdmin::class, LanguageMiddleware::class])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::post('/', [AdminController::class, 'create'])->name('admin.create_event');
     Route::put('/{id}', [AdminController::class, 'edit'])->name('admin.edit_event');
