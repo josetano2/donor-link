@@ -46,6 +46,12 @@
                                 <button type="submit" class="dropdown-item">{{ __('navbar.logout') }}</button>
                             </form>
                         </li>
+
+                        @if (Auth::user()->is_admin)
+                            <li>
+                                <a class="dropdown-item" href="{{ route('admin') }}">Dashboard</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             @else
