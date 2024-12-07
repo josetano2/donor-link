@@ -37,7 +37,7 @@
                         class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}"
                         required>
                     <label for="password">@lang('login.password')</label>
-                    @error('password')
+                    @error('email')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

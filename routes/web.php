@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 // Language Switcher Route
 Route::get('lang/{locale}', function ($locale) {
-    if (in_array($locale, ['en', 'ja'])) {
+    if (in_array($locale, ['en', 'ja', 'id'])) {
         session(['locale' => $locale]);
     }
     return redirect()->back();

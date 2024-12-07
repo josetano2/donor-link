@@ -46,7 +46,7 @@
     "Verify Email Address": "Verify Email Address",
     "Whoops!": "Whoops!",
     "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
-    "login.title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "login.title": "Join the Lifesaving Network - Your First Step to Giving the Gift of Life",
     "login.form_title": "Login",
     "login.email": "Email",
     "login.password": "Password",
@@ -65,8 +65,8 @@
     "navbar.english": "English",
     "navbar.japanese": "日本語",
     "navbar.language": "English",
-    "events.upcoming" : "Upcoming Events",
-    "register.title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "events.upcoming": "Upcoming Events",
+    "register.title": "Learn how to keep your heart healthy and strong in this informative session dedicated to donors. Get practical advice on managing cholesterol, controlling blood pressure, and leading a heart-healthy lifestyle.",
     "register.form_title": "Register",
     "register.name": "Name",
     "register.email": "Email",
@@ -106,5 +106,9 @@
     "event.contact_person": "Contact Person",
     "event.contact_number": "Contact Number",
     "event.register": "Register",
-    "event.unregister": "Unregister"
+    "event.unregister": "Unregister",
+    "start_blood_donor_journey": "Start your <strong>Blood Donor</strong> Journey",
+    "see_upcoming_events": "See Upcoming <strong>Events</strong>",
+    "track_your_events": "Track your <strong>Events</strong>",
+    "request_donors": "Request <strong>Donors</strong>"
 }

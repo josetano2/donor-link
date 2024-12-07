@@ -46,7 +46,7 @@
     "Verify Email Address": "メールアドレスの確認",
     "Whoops!": "おっと！",
     "You are receiving this email because we received a password reset request for your account.": "パスワード再設定のリクエストを受け付けました。",
-    "login.title": "ロレムイプサムは単なるダミーテキストです",
+    "login.title": "ライフセービングネットワークに参加する - 命の贈り物を贈るための最初のステップ",
     "login.form_title": "ログイン",
     "login.email": "メール",
     "login.password": "パスワード",
@@ -66,7 +66,7 @@
     "navbar.japanese": "日本語",
     "navbar.language": "Japanese",
     "events.upcoming": "今後のイベント",
-    "register.title": "私たちの登録ページへようこそ。次の情報を入力してください",
+    "register.title": "ドナーに捧げられたこの有益なセッションであなたの心臓を健康で強く保つ方法を学びましょう。コレステロールの管理、血圧のコントロール、心臓に健康的なライフスタイルを送るための実践的なアドバイスを受けてください。",
     "register.form_title": "登録",
     "register.name": "名前",
     "register.email": "メールアドレス",
@@ -106,5 +106,9 @@
     "event.contact_person": "連絡先担当者",
     "event.contact_number": "連絡先番号",
     "event.register": "登録",
-    "event.unregister": "登録解除"
+    "event.unregister": "登録解除",
+    "start_blood_donor_journey": "<strong>献血</strong>の旅を始めましょう",
+    "see_upcoming_events": "今後の<strong>イベント</strong>を見る",
+    "track_your_events": "あなたの<strong>イベント</strong>を追跡する",
+    "request_donors": "<strong>献血者</strong>を依頼する"
 }

@@ -65,6 +65,8 @@
                 <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                     <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'en']) }}">English</a></li>
                     <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'ja']) }}">Japanese</a></li>
+                    <li><a class="dropdown-item" href="{{ route('lang.switch', ['locale' => 'id']) }}">Indonesian</a>
+                    </li>
                 </ul>
             </div>
         </div>
